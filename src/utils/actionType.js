@@ -1,0 +1,3 @@
+export const TABLE_ACTIONS = {
+    TABLE_DATA_VALUES:'TABLE_DATA_VALUES'
+}

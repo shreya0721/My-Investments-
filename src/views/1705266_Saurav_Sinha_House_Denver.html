@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="display: flex;flex-direction: column;">
+        <div style="display: flex;flex-direction: row;margin-left: 23px;margin-bottom: 6%;">
+           <div style="padding-left: 10px;padding-bottom: 40px;width: 20%;
+           margin-right: 11%;
+           height: 47px;
+           margin-left: 12%;
+           border: 1px solid lightgrey;">
+           
+              <h1 style="margin:0;padding-left: 48px;
+              padding-top: 11px;">District</h1> 
+              <h3 style="padding-left: 81px;margin:0">23</h3> 
+           </div>
+           <div style="padding-right: 10px;padding-bottom: 40px;width: 20%;
+           margin-right: 11%;
+           height: 47px;
+         
+           border: 1px solid lightgrey;">
+            <h1 style="margin:0;padding-left: 31px;
+            padding-top: 11px;">No of States</h1> 
+            <h3 style="padding-left: 98px;margin:0">23</h3> 
+            </div>
+            <div style="padding-left: 10px;padding-bottom: 40px;width: 20%;
+            margin-right: 11%;
+            height: 47px;
+            
+            border: 1px solid lightgrey;">
+               <h1 style="margin:0;padding-left: 22px;
+               padding-top: 11px;">Total Count</h1> 
+               <h3 style="padding-left: 90px;margin:0">23</h3> 
+            </div>
+        </div>
+        <div style="display: flex;flex-direction: row;margin-left: 23px;">
+             <div id="container" style="margin-right: 19px;" ></div>
+             <div id="container1" ></div>
+        </div>
+    </div>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+    <script>
+        var options = {
+            chart: {
+        renderTo: 'container',
+        type: 'column',
+        borderColor: "#346691",
+          borderWidth: 1,
+          borderRadius: "10px",
+    },
+    
+    colors: ['#FF3300'],
+    
+    title: {
+        text: 'Top 10 States with Most Number of Cases'
+    },
+    subtitle: {
+        text: '1705266'
+    },
+    xAxis: {
+        title: {
+        text: 'State',
+        color: 'blue'
+    },
+        categories: [
+            'Karnataka',
+            'Tamil Nadu',
+            'Kerela',
+            'Maharashtra',
+            'Gujarat',
+            'Uttar Pradesh',
+            'Andhra Pradesh',
+            'Telangana',
+            'Punjab',
+            'Rajasthan'
+        ],
+        crosshair: true
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: 'Count'
+        }
+    },
+    tooltip: {
+        headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+        pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+            '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+        footerFormat: '</table>',
+        shared: true,
+        useHTML: true
+    },
+    plotOptions: {
+        column: {
+            pointPadding: 0.1,
+            borderWidth: 0
+        }
+    },
+    series: [{
+        name: 'Count',
+        data: [130, 90, 70, 50, 35,30, 27, 26, 26, 20, 15]
+
+    }]
+}
+var chart = new Highcharts.chart(options);
+    </script>
+
+<script>
+    var options = {
+        chart: {
+    renderTo: 'container1',
+    type: 'column',
+    borderColor: "#346691",
+          borderWidth: 1,
+          borderRadius: "10px",
+},
+colors: ['yellow'],
+title: {
+    text: 'Type of Transmission for the individuals'
+},
+subtitle: {
+    text: '1705266'
+},
+xAxis: {
+    title: {
+        text: 'Transmission Type',
+        color: 'blue'
+    },
+    categories: [
+        'Local',
+        'Imported',
+        'TBD',
+        'Unknown'
+    ],
+    crosshair: true
+},
+yAxis: {
+    min: 0,
+    title: {
+        text: 'Count'
+    }
+},
+tooltip: {
+    headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+    pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+        '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+    footerFormat: '</table>',
+    shared: true,
+    useHTML: true
+},
+plotOptions: {
+    column: {
+        pointPadding: 0.1,
+        borderWidth: 0
+    }
+},
+series: [{
+    name: 'Count',
+    data: [290,270,23,0]
+
+}]
+}
+var chart = new Highcharts.chart(options);
+</script>
+    
+
+</body>
+</html>
